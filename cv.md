@@ -11,9 +11,9 @@ Senior front-end developer with 7+ years of experience designing and building re
 
 ## Skills
 
-> HTML5, CSS3
-> CSS3/SCSS
-> JavaScript
-> Git, GitHub
-> Figma
-> Module Bundlers: Gulp, Webpack
+- HTML5, CSS3
+- CSS3/SCSS
+- JavaScript
+- Git, GitHub
+- Figma
+- Module Bundlers: Gulp, Webpack
