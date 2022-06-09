@@ -44,3 +44,8 @@ export function menuClose() {
 ## Experience
 1. Work closely with programmers and clients to meet project requirements, goals, and desired functionality.
 2. Develop and integrate customized themes into WordPress, PHP-Fusion, and Concrete5.
+
+## Education
+-  HTML, CSS video courses on YouTube
+- JavaScript [Code-Basics](https://ru.code-basics.com/)
+- RS Schools Course «JavaScript/Front-end. Stage 0» (in progress)
