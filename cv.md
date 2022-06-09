@@ -49,3 +49,6 @@ export function menuClose() {
 -  HTML, CSS video courses on YouTube
 - JavaScript [Code-Basics](https://ru.code-basics.com/)
 - RS Schools Course «JavaScript/Front-end. Stage 0» (in progress)
+
+## English
+- B1 (I have some speaking practice, but not with native speakers)
