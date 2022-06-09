@@ -40,3 +40,7 @@ export function menuClose() {
 	document.documentElement.classList.remove("menu-open");
 }
 ```
+
+## Experience
+1. Work closely with programmers and clients to meet project requirements, goals, and desired functionality.
+2. Develop and integrate customized themes into WordPress, PHP-Fusion, and Concrete5.
