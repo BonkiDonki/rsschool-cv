@@ -1,3 +1,509 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap);
+@font-face {
+  font-family: icons;
+  font-display: swap;
+  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+[class*=_icon-]:before {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class*=_icon-]:before {
+  display: block;
+}
+
+._icon-discord:before {
+  content: "\e901";
+  color: #7289da;
+}
+
+._icon-telegram:before {
+  content: "\e902";
+  color: #0088cc;
+}
+
+._icon-mail:before {
+  content: "\e903";
+  color: rgba(247, 22, 22, 0.815);
+}
+
+._icon-figma:before {
+  content: "\e900";
+  color: #d6dfff;
+}
+
+._icon-gulp:before {
+  content: "\e905";
+  color: #da4648;
+}
+
+._icon-github:before {
+  content: "\e906";
+  color: #ffffff;
+}
+
+._icon-javascript:before {
+  content: "\e907";
+  color: #f7df1e;
+}
+
+._icon-css3:before {
+  content: "\e908";
+  color: #1572b6;
+}
+
+._icon-html5:before {
+  content: "\e909";
+  color: #e34f26;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
 body {
-  background-color: #7a956b;
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  color: #D6E2E0;
+  line-height: 1;
+  font-family: "Montserrat";
+  font-size: 1rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+  font-family: "Montserrat";
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+body {
+  background-color: #333;
+}
+.lock body {
+  overflow: hidden;
+  touch-action: none;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.wrapper > main {
+  flex: 1 1 auto;
+}
+.wrapper > * {
+  min-width: 0;
+}
+
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+[class*=__container] {
+  max-width: 73.125rem;
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
+
+[class*=-ibg] {
+  position: relative;
+}
+[class*=-ibg] img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+[class*=-ibg_contain] img {
+  object-fit: contain;
+}
+
+.header {
+  padding: 30px 0;
+  background-color: #000;
+}
+.menu__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.menu__item:not(:last-child) {
+  margin-right: 20px;
+}
+@media (max-width: 45.125em) {
+  .menu__item {
+    margin-bottom: 30px;
+  }
+}
+.menu__link {
+  font-size: 1.125rem;
+  font-weight: 600;
+  padding: 10px 15px;
+  transition: all 0.3s ease-out;
+}
+.menu__link:hover {
+  color: #000;
+  background: #8AB6A9;
+  box-shadow: 0 0 5px #8AB6A9, 0 0 25px #8AB6A9, 0 0 50px #8AB6A9, 0 0 200px #8AB6A9;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(0, 0, 0, 0.3333333333));
+}
+
+/*
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 18px;
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			left: 0px;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: #000;
+		}
+		&::before {
+			top: 0px;
+		}
+		&::after {
+			bottom: 0px;
+		}
+		span {
+			top: calc(50% - 1px);
+		}
+		.menu-open & {
+			span {
+				transform: scale(0);
+			}
+			&::before {
+				transform: rotate(-45deg);
+				top: calc(50% - 1px);
+			}
+			&::after {
+				transform: rotate(45deg);
+				bottom: calc(50% - 1px);
+			}
+		}
+	}
+}
+*/
+.footer {
+  background-color: #508068;
+  padding: 30px 0;
+}
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__github {
+  display: flex;
+  align-items: center;
+  font-size: 1.125rem;
+}
+.footer__github::before {
+  margin-right: 15px;
+  font-size: 30px;
+}
+.footer__copy {
+  font-size: 1.125rem;
+}
+.footer__logo img {
+  height: 60px;
+}
+
+.profile {
+  padding: 30px 0;
+}
+.profile__container {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 45.125em) {
+  .profile__container {
+    flex-direction: column-reverse;
+  }
+}
+.profile__logo {
+  box-shadow: 0px 0px 17px 5px rgba(255, 255, 255, 0.64);
+}
+.profile__info {
+  padding-left: 15px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0px 0px 0px auto;
+  text-align: center;
+}
+@media (max-width: 45.1875em) {
+  .profile__info {
+    padding-left: 0;
+    margin-bottom: 30px;
+  }
+}
+.profile__name {
+  margin-bottom: 40px;
+}
+.profile__subtitle {
+  font-size: 2.0625rem;
+  margin-bottom: 40px;
+  letter-spacing: 0.1em;
+}
+.profile__title {
+  font-size: 3.4375rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+}
+@media (max-width: 45.125em) {
+  .profile__title {
+    margin-bottom: 30px;
+  }
+}
+.profile__contacts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.profile__link {
+  font-size: 1.125rem;
+  display: flex;
+  transition: all 0.3s ease-out;
+}
+.profile__link:not(:last-child) {
+  margin-right: 15px;
+}
+.profile__link::before {
+  font-size: 20px;
+  margin-right: 10px;
+}
+.profile__link:hover {
+  color: #508068;
+}
+@media (max-width: 60.75em) {
+  .profile__link {
+    margin-bottom: 15px;
+  }
+}
+
+.about__container {
+  background-color: #508068;
+  padding: 40px 0;
+}
+.about__title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #333;
+  text-align: center;
+}
+.about__text {
+  line-height: 1.25;
+  padding: 0 10px;
+}
+
+.skills {
+  padding: 40px 0;
+}
+.skills__title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #508068;
+  text-align: center;
+}
+.skills__items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  justify-items: center;
+}
+@media (max-width: 48.25em) {
+  .skills__items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 26.5625em) {
+  .skills__items {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.skills__item {
+  display: flex;
+  font-size: 1.5625rem;
+}
+.skills__item::before {
+  margin-right: 15px;
+}
+
+.code__container {
+  background-color: #508068;
+  padding: 40px 0;
+}
+.code__title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #508068;
+  text-align: center;
+}
+.code pre {
+  max-width: 600px;
+  background-color: #333;
+  margin: 0 auto;
+}
+@media (max-width: 26.5625em) {
+  .code pre {
+    font-size: 0.75rem;
+  }
+}
+
+.experience {
+  padding: 30px 0;
+}
+.experience__title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #508068;
+  text-align: center;
+}
+.experience__items {
+  font-size: 1.25rem;
+}
+.experience__item {
+  margin-bottom: 15px;
+  position: relative;
+  display: flex;
+}
+.experience__item::before {
+  transition: all 0.3s ease-out;
+  margin-right: 15px;
+  content: "";
+  height: 25px;
+  width: 10px;
+  background-color: #508068;
+}
+.experience__item:hover::before {
+  content: "";
+  height: 25px;
+  width: 30px;
+  background-color: #508068;
+}
+
+.education {
+  padding: 30px 0;
+}
+.education__title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #508068;
+  text-align: center;
+}
+.education__items {
+  font-size: 1.25rem;
+}
+.education__item {
+  margin-bottom: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.education__item::before {
+  transition: all 0.3s ease-out;
+  margin-left: 15px;
+  content: "";
+  height: 25px;
+  width: 10px;
+  background-color: #508068;
+}
+.education__item:hover::before {
+  content: "";
+  height: 25px;
+  width: 30px;
+  background-color: #508068;
+}
+.education__link {
+  margin-right: 10px;
+  color: #508068;
 }
